@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEP5 テスト</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .display-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+    }
+
+    .display-box {
+      border: 1px solid #ccc;
+      padding: 12px;
+      min-height: 48px;
+      border-radius: 4px;
+      background-color: #f7f7f7;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .highlight {
+      background-color: #fff8c4;
+      box-shadow: 0 0 0 2px #ffe58f inset;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    .count {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>STEP5 テスト</h1>
+
+  <div class="controls">
+    <input id="textInput" type="text" placeholder="テキストを入力してください" />
+    <button id="showButton">表示</button>
+    <button id="bgButton">背景色を変更</button>
+    <button id="addButton">追加</button>
+  </div>
+
+  <div class="display-wrapper">
+    <div>
+      <p>表示エリア</p>
+      <div id="displayArea" class="display-box">ここに表示されます</div>
+    </div>
+    <div>
+      <p>サブ表示エリア</p>
+      <div id="mirrorArea" class="display-box">入力内容をここに表示します</div>
+    </div>
+  </div>
+
+  <p class="count">追加回数: <span id="addCount">0</span></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>テキスト</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script src="test.js"></script>
+</body>
+</html>
